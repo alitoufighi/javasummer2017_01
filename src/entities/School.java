@@ -6,7 +6,7 @@ import java.util.Vector;
 public class School {
 	private String name;
 	private int numStudents;
-	private boolean housed;
+	private Boolean housed;
 	private ArrayList<String> houseNames;
 	private Vector<String> studentNames;
 	private Vector<String> professorNames;
@@ -17,23 +17,31 @@ public class School {
 		name = "";
 		numStudents = 0;
 		housed = false;
+		houseNames = new ArrayList<>();
+		studentNames = new Vector<>();
+		professorNames = new Vector<>();
+		courseNames = new ArrayList<>();
 	}
 	
 	//constructor with predefined fields value
-	public School(String _name, boolean _housed, ArrayList<String> _houseNames,
-			Vector<String> _studentNames, Vector<String> _professorNames, ArrayList<String> _courseNames) {
+	public School(String _name, ArrayList<String> _houseNames, ArrayList<String> _courseNames, Boolean _housed,
+			Vector<String> _studentNames, Vector<String> _professorNames) {
 		name = _name;
 		housed = _housed;
 		houseNames = _houseNames;
 		studentNames = _studentNames;
-//		numStudents = _numStd;
 		numStudents = studentNames.size();
 		professorNames = _professorNames;
 		courseNames = _courseNames;
 	}
 	
+	public School(String _name) {
+		name = _name;
+	}
+	
 	//some simple setters
 	
+
 	public void setName(String _name) {
 		name = _name;
 	}
@@ -42,7 +50,7 @@ public class School {
 		numStudents = _numStudents;
 	}
 	
-	public void setHoused(boolean _housed) {
+	public void setHoused(Boolean _housed) {
 		housed = _housed;
 	}
 	
@@ -66,7 +74,7 @@ public class School {
 	
 	public String getName() { return name; }
 	public int getNumStudents() { return numStudents; }
-	public boolean getIsHoused() { return housed; }
+	public Boolean getIsHoused() { return housed; }
 	public ArrayList<String> getHouseNames() { return houseNames; }
 	public Vector<String> getStudentNames() { return studentNames; }
 	public Vector<String> getProfessorNames() { return professorNames; }

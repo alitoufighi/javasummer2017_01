@@ -55,12 +55,18 @@ public class Person {
 		job = "Unemployed"; // :|
 	}
 	
-	public Person(String _name, String _houseName, String _school, Date _birthday, BloodStatus _bs) {
+	public Person(String _name) {
+		name = _name;
+	}
+	
+	public Person(String _name, String _houseName, BloodStatus _bloodStatus, String _school, Date _birthday) {
 		name = _name;
 		houseName = _houseName;
 		school = _school;
 		birthday = _birthday;
-		bloodStatus = _bs;
+		bloodStatus = _bloodStatus;
 	}
+	
+	
 	
 }

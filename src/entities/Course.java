@@ -9,7 +9,7 @@ public class Course {
 	private int year;
 	private Vector<String> studentNames;
 	
-	public Course(){
+	public Course(){ // I created these constructors using setters just to get a feedback from you about using them in constructor.
 		setName("");
 		setMinGrade('F');
 		setProfessorName("");
@@ -23,6 +23,23 @@ public class Course {
 		setProfessorName(_professorName);
 		setYear(_year);
 		setStudentNames(_studentNames);
+	}
+	
+	public Course(String _name){
+		setName(_name);
+		setMinGrade('F');
+		setProfessorName("");
+		setYear(0);
+		studentNames = new Vector<>();
+	}
+	
+
+	public Course(String _name, String _professorName, char _minGrade, int _year) {
+		setName(_name);
+		setMinGrade(_minGrade);
+		setProfessorName(_professorName);
+		setYear(_year);
+		studentNames = new Vector<>();
 	}
 
 	public String getName() {
