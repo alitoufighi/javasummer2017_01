@@ -1,5 +1,13 @@
 package tests;
 
+// PLEASE NOTE:
+	//As I remember, our School class didn't contain any fields for "years". What's this?!
+	// Assumptions:
+	// - Our class constructor is:
+	/* public School(String name, ArrayList<String> houses, ArrayList<String> courses,
+		Vector<String> students, Vector<String> professors) */
+	// - Unfortunately, I couldn't find any solution to include that "boolean" type (for "housed" field) in this constructor (as null can't be used for primitive types) and It's always set as "false" in constructor.
+
 
 import java.util.ArrayList;
 import java.util.Vector;
@@ -35,12 +43,11 @@ public class SchoolTest {
 		courses.add("Herbology");
 		courses.add("History of Magic");
 
-		hogwarts = new School("Hogwarts", null, courses, (Boolean)null, null, null);
+		hogwarts = new School("Hogwarts", null, courses, null, null);
 		ArrayList<String> actual = hogwarts.getCourseNames();
 		ArrayList<String> expected = courses;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 	}
-	@SuppressWarnings("null")
 	@Test
 	public void getHousesTest()
 	{
@@ -49,19 +56,12 @@ public class SchoolTest {
 		houses.add("Hufflepuff");
 		houses.add("Ravenclaw");
 		houses.add("Slytherin");
-		hogwarts = new School("Hogwarts", houses, null, (Boolean)null, null, null);
+		hogwarts = new School("Hogwarts", houses, null, null, null);
 		ArrayList<String> actual = hogwarts.getHouseNames();
 		ArrayList<String> expected = houses;
 		Assert.assertEquals(expected, actual);
 				
 	}
-	
-	
-//	School(String _name, ArrayList<String> _houseNames, ArrayList<String> _courseNames, boolean _housed,
-//			Vector<String> _studentNames, Vector<String> _professorNames) {
-	
-	
-	@SuppressWarnings("null")
 	@Test
 	public void getStudentsTest()
 	{
@@ -69,23 +69,23 @@ public class SchoolTest {
 		students.add("Harry Potter");
 		students.add("Luna Lovegood");
 		students.add("Lucius Malfoy");
-		hogwarts = new School("Hogwarts", null, null, (Boolean)null, students, null);
+		hogwarts = new School("Hogwarts", null, null, students, null);
 		
 		Vector<String> actual = hogwarts.getStudentNames();
 		Vector<String> expected = students;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());		
 	}
-	@SuppressWarnings("null")
 	@Test
 	public void getProfessorsTest()
 	{
-		/*public School(String name, ArrayList<String> houses, ArrayList<String> course#s,
+		
+		/*public School(String name, ArrayList<String> houses, ArrayList<String> courses,
 		ArrayList<Integer> years, Vector<String> students, Vector<String> professors)*/
 		Vector<String> professors = new Vector<String>();
 		professors.add("Severus Snape");
 		professors.add("Albus Dumbledore");
 		professors.add("Minerva McGonnagol");
-		hogwarts = new School("Hogwarts", null, null, (Boolean)null, null, professors);
+		hogwarts = new School("Hogwarts", null, null, null, professors);
 		
 		Vector<String> actual = hogwarts.getProfessorNames();
 		Vector<String> expected = professors;

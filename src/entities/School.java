@@ -24,10 +24,10 @@ public class School {
 	}
 	
 	//constructor with predefined fields value
-	public School(String _name, ArrayList<String> _houseNames, ArrayList<String> _courseNames, Boolean _housed,
+	public School(String _name, ArrayList<String> _houseNames, ArrayList<String> _courseNames,
 			Vector<String> _studentNames, Vector<String> _professorNames) {
 		name = _name;
-		housed = _housed;
+		housed = false; // Please read my note at the first of "SchoolTest.java" file
 		houseNames = _houseNames;
 		studentNames = _studentNames;
 		numStudents = studentNames.size();
